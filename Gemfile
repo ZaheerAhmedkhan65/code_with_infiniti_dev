@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Use a stable version of Rails
-gem "rails", "~> 7.2.1", ">= 7.2.1.1"
+gem "rails", "~> 8.0.0"
 # Asset pipeline
 gem "sprockets-rails"
 # Use PostgreSQL for production (recommended over SQLite for scalability)
