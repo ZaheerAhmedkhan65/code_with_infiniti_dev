@@ -62,8 +62,8 @@
                         <%= student.email %>
                       <% end %>
                     </td>
-                    <td><%= link_to "Repository", student.repository_link, class: 'text-decoration-none' %></td>
-                    <td><%= link_to "Page", student.page_link, class: 'text-decoration-none' %></td>
+                    <td><%= link_to "Repository", sanitize(student.repository_link), class: 'text-decoration-none' %></td>
+                    <td><%= link_to "Page", sanitize(student.page_link), class: 'text-decoration-none' %></td>
                     <td>
                       <% if user_signed_in? && current_user.admin? %>
                         <span class="d-flex gap-3">

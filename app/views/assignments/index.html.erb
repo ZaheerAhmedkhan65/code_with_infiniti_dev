@@ -50,7 +50,7 @@
                 <td><%= assignment.title %></td>
                 <td><%= assignment.subject %></td>
                 <td><%= assignment.week_number %></td>
-                <td><%= link_to "Link" , assignment.related_link , class:'text-decoration-none' , target:"_blank" %></td>
+                <td><%= link_to("Link", sanitize(assignment.related_link), class: "text-decoration-none", target: "_blank") %></td>
                 <td><%= assignment.due_date %></td>
                 <td><%= assignment.description %></td>
                 <td>
