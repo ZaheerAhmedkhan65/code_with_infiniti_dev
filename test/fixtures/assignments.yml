@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  subject: MyString
+  week_number: MyString
+  due_date: 2024-11-01
+  related_link: MyString
+
+two:
+  title: MyString
+  description: MyString
+  subject: MyString
+  week_number: MyString
+  due_date: 2024-11-01
+  related_link: MyString

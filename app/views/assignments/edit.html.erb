@@ -1,0 +1,11 @@
+<div class="container">
+  <% content_for :title, "Editing assignment" %>
+  <div class="card border-0">
+    <div class="card-title text-center my-3 bg-secondary-subtle py-3">
+      <h1>Edit <%= @assignment.week_number %> Assignment</h1>
+    </div>
+    <div class="card-body">
+      <%= render "form", assignment: @assignment %>
+    </div>
+  </div>
+</div>

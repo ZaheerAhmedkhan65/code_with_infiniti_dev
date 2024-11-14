@@ -1,0 +1,59 @@
+<div id="<%= dom_id student %>">
+  <div class="card my-3">
+    <div class="card-body">
+      <div class="d-lg-flex align-items-center justify-content-between">
+        <div>
+          <p>
+            <strong class="fs-4 fw-bold"> 
+              <%= student.name %>
+            </strong>
+          </p>
+          <% if user_signed_in? && current_user.admin? %>
+          <p class="lead">
+            <strong>Phone : </strong>
+            <%= student.phone %>
+          </p>
+          
+        
+          <p class="lead">
+          <strong>Education : </strong>
+          <%= student.education %>
+          </p>
+          
+        
+          <p class="lead">
+            <strong>Email : </strong>
+            <%= student.email %>
+          </p>
+
+          <% end %>
+          
+          <p class="lead">
+            <strong>Page link : </strong>
+            <%= student.page_link %>
+          </p>
+    
+          <p class="lead">
+            <strong>Repository link : </strong>
+            <%= student.repository_link %>
+          </p>
+
+          <p class="lead">
+            <%= link_to "View #{student.name} profile" , student , class:'text-decoration-none'%>
+          </p>
+        
+        </div>
+    
+        <div class="bg-primary-subtle rounded-2 text-center">
+          <%= link_to student do %>
+            <% if student.image.attached? %>
+             <%= image_tag student.image, width: 200, height:220 %>
+            <% else %>
+             No image
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>

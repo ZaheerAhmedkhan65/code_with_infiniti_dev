@@ -1,0 +1,44 @@
+<div id="<%= dom_id assignment %>">
+  <div class="card my-3"> 
+    <div class="card-body">
+      <div class="d-lg-flex align-items-center justify-content-between">
+        <div class="lead">
+          <p>
+            <strong>Title : </strong>
+            <%= assignment.title %>
+          </p>
+
+          <p>
+            <strong>Subject : </strong>
+            <%= assignment.subject %>
+          </p>
+        
+          <p>
+            <strong>Due date : </strong>
+            <%= assignment.due_date %>
+          </p>
+        
+          <p>
+            <strong>Related link : </strong>
+            <%= link_to assignment.related_link do %>
+              <%= assignment.related_link %>
+            <%end%>
+          </p>
+          
+          <p>
+              <strong>Description : </strong>
+              <%= assignment.description %>
+          </p>
+
+        </div>
+    
+        <div class="text-center">
+          <%= link_to assignment do %>
+            <%= image_tag assignment.image , width:300 , height:300 %>
+          <%end%>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
