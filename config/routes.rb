@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # Main Resources
   resources :assignments
   resources :students
-  resources :contacts, only: [:create]
+  resources :contacts, only: [ :create ]
 
   # Static Pages
   get "faq", to: "static_pages#faq"
@@ -14,13 +14,13 @@ Rails.application.routes.draw do
 
   # Admin Routes
   namespace :admin do
-    patch 'users/:id', to: 'admin#update_user', as: :update_user
+    patch "users/:id", to: "admin#update_user", as: :update_user
   end
-  get 'admin/dashboard', to: 'admin#dashboard', as: :dashboard 
-  get 'admin/view_messages', to: 'admin#view_messages', as: :view_messages
+  get "admin/dashboard", to: "admin#dashboard", as: :dashboard
+  get "admin/view_messages", to: "admin#view_messages", as: :view_messages
 
   # User Management
-  resources :users, only: [:index, :edit, :update, :show, :destroy] do
+  resources :users, only: [ :index, :edit, :update, :show, :destroy ] do
     member do
       patch :change_role
     end

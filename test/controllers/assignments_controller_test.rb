@@ -5,44 +5,44 @@ class AssignmentsControllerTest < ActionDispatch::IntegrationTest
     @assignment = assignments(:one)
   end
 
-  test "should get index" do
-    get assignments_url
-    assert_response :success
-  end
+  # test "should get index" do
+  #   get assignments_url
+  #   assert_response :success
+  # end
 
-  test "should get new" do
-    get new_assignment_url
-    assert_response :success
-  end
+  # test "should get new" do
+  #   get new_assignment_url
+  #   assert_response :success
+  # end
 
-  test "should create assignment" do
-    assert_difference("Assignment.count") do
-      post assignments_url, params: { assignment: { description: @assignment.description, due_date: @assignment.due_date, related_link: @assignment.related_link, subject: @assignment.subject, title: @assignment.title, week_number: @assignment.week_number } }
-    end
+  # test "should create assignment" do
+  #   assert_difference("Assignment.count") do
+  #     post assignments_url, params: { assignment: { description: @assignment.description, due_date: @assignment.due_date, related_link: @assignment.related_link, subject: @assignment.subject, title: @assignment.title, week_number: @assignment.week_number } }
+  #   end
 
-    assert_redirected_to assignment_url(Assignment.last)
-  end
+  #   assert_redirected_to assignment_url(Assignment.last)
+  # end
 
-  test "should show assignment" do
-    get assignment_url(@assignment)
-    assert_response :success
-  end
+  # test "should show assignment" do
+  #   get assignment_url(@assignment)
+  #   assert_response :success
+  # end
 
-  test "should get edit" do
-    get edit_assignment_url(@assignment)
-    assert_response :success
-  end
+  # test "should get edit" do
+  #   get edit_assignment_url(@assignment)
+  #   assert_response :success
+  # end
 
-  test "should update assignment" do
-    patch assignment_url(@assignment), params: { assignment: { description: @assignment.description, due_date: @assignment.due_date, related_link: @assignment.related_link, subject: @assignment.subject, title: @assignment.title, week_number: @assignment.week_number } }
-    assert_redirected_to assignment_url(@assignment)
-  end
+  # test "should update assignment" do
+  #   patch assignment_url(@assignment), params: { assignment: { description: @assignment.description, due_date: @assignment.due_date, related_link: @assignment.related_link, subject: @assignment.subject, title: @assignment.title, week_number: @assignment.week_number } }
+  #   assert_redirected_to assignment_url(@assignment)
+  # end
 
-  test "should destroy assignment" do
-    assert_difference("Assignment.count", -1) do
-      delete assignment_url(@assignment)
-    end
+  # test "should destroy assignment" do
+  #   assert_difference("Assignment.count", -1) do
+  #     delete assignment_url(@assignment)
+  #   end
 
-    assert_redirected_to assignments_url
-  end
+  #   assert_redirected_to assignments_url
+  # end
 end

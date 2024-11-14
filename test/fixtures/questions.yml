@@ -1,9 +1,0 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  quiz: one
-  content: MyText
-
-two:
-  quiz: two
-  content: MyText

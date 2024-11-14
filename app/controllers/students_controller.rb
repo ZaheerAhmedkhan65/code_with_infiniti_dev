@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
-  before_action :check_admin, only: [:new, :create, :edit, :update, :destroy]
+  before_action :check_admin, only: [ :new, :create, :edit, :update, :destroy ]
 
 
 
@@ -73,8 +73,7 @@ class StudentsController < ApplicationController
       end
     end
 
-    # Only allow a list of trusted parameters through.
     def student_params
-      params.require(:student).permit(:name, :email, :repository_link, :page_link, :phone , :image , :education) 
+      params.require(:student).permit(:name, :email, :repository_link, :page_link, :phone, :image, :education)
     end
 end

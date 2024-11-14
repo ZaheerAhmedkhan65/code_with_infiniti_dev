@@ -1,62 +1,70 @@
 source "https://rubygems.org"
 
-# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+# Use a stable version of Rails
 gem "rails", "~> 7.2.1", ">= 7.2.1.1"
-# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+# Asset pipeline
 gem "sprockets-rails"
-# Use sqlite3 as the database for Active Record
+# Use PostgreSQL for production (recommended over SQLite for scalability)
+gem "pg", ">= 1.1", "< 2.0"
+# Use sqlite3 for development and testing (still good for local development)
 gem "sqlite3", ">= 1.4"
-# Use the Puma web server [https://github.com/puma/puma]
+# Puma web server
 gem "puma", ">= 5.0"
-# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
+# ESM import maps for JavaScript
 gem "importmap-rails"
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+# Hotwire: Turbo (SPA-like page acceleration)
 gem "turbo-rails"
-# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+# Hotwire: Stimulus
 gem "stimulus-rails"
-# Build JSON APIs with ease [https://github.com/rails/jbuilder]
+# JSON API support
 gem "jbuilder"
-# Use Redis adapter to run Action Cable in production
-# gem "redis", ">= 4.0.1"
+# Redis for Action Cable, caching, etc.
+gem "redis", ">= 4.0.1"
 
-gem 'devise'
+# Devise for authentication
+gem "devise"
 
+# Image processing support (ActiveStorage variants)
+gem "image_processing", "~> 1.2"
 
-# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-# gem "kredis"
+# ActiveStorage support (make sure to configure your storage services in config/storage.yml)
+gem "activestorage"
 
-# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+# For sending emails (optional, in case you need to configure mailers for Devise or contact forms)
+gem "letter_opener_web", group: :development
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
-# Reduces boot times through caching; required in config/boot.rb
+# For faster boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-
-gem 'image_processing', '~> 1.2'
-
-
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  # Debugging with Rails
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
-  # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
+  # Security analysis for vulnerabilities
   gem "brakeman", require: false
 
-  # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
+  # Audit gems for bundler security
+  gem "bundler-audit", require: false
+
+  # Code style with RuboCop
   gem "rubocop-rails-omakase", require: false
 end
 
 group :development do
-  # Use console on exceptions pages [https://github.com/rails/web-console]
+  # Web console for interactive debugging in the browser
   gem "web-console"
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  # System testing with Capybara
   gem "capybara"
+  # WebDriver for Selenium-based testing
   gem "selenium-webdriver"
 end
+
+# Optional: Add gems for testing other features
+# gem "factory_bot_rails" # For factories in tests
+# gem "faker" # For generating fake data in tests

@@ -66,6 +66,6 @@ class AssignmentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def assignment_params
-      params.require(:assignment).permit(:title, :description, :subject, :week_number, :due_date, :related_link , :image)
+      params.require(:assignment).permit(:title, :description, :subject, :week_number, :due_date, :related_link, :image)
     end
 end

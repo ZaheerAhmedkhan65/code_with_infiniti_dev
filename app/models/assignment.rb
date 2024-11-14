@@ -14,5 +14,4 @@ class Assignment < ApplicationRecord
       errors.add(:image, "must be a JPEG or PNG file")
     end
   end
-
 end
